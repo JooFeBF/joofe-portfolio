@@ -6,6 +6,7 @@ import ReduxIcon from './icons/ReduxIcon.astro'
 import TailwindIcon from './icons/TailwindIcon.astro'
 import CssIcon from './icons/CssIcon.astro'
 import NodeJSIcon from './icons/NodeJSIcon.astro'
+import ReactRouterIcon from './icons/ReactRouterIcon.astro'
 
 const CinemaAppImage = 'project-cinema-app.webp'
 const NewsAppImage = 'project-bootcamp-news.webp'
@@ -38,6 +39,11 @@ const TAGS = {
     name: 'NodeJS',
     color: 'bg-green-500',
     icon: NodeJSIcon,
+  },
+  REACT_ROUTER: {
+    name: 'React Router',
+    color: 'bg-red-700',
+    icon: ReactRouterIcon,
   }
 }
 
@@ -48,7 +54,7 @@ const PROJECTS = [
     description: 'Aplicación web para buscar películas y series de TV.',
     github: 'https://github.com/JooFeBF/Cinema-App',
     link: 'https://cinema-app-lake.vercel.app/',
-    tags: [TAGS.REACT, TAGS.CSS]
+    tags: [TAGS.REACT, TAGS.CSS, TAGS.REACT_ROUTER]
   },
   {
     title: 'News App',
