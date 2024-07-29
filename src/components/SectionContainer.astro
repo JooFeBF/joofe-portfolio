@@ -1,0 +1,7 @@
+---
+  const classProp = Astro.props.class;
+---
+
+<section class=`min-h-dvh flex flex-col justify-center items-center px-4 ${classProp ? classProp : ''}` {...Astro.props}>
+  <slot />
+</section>

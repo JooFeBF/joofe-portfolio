@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import SocialLink from '../components/SocialLink.astro';
+import GithubIcon from '../components/icons/GithubIcon.astro';
+import MailIcon from '../components/icons/MailIcon.astro';
+import Projects from '../components/Projects.astro';
+---
+
+<Layout title="JooFe Portfolio">
+  <SectionContainer id="Home">
+    <div class="flex justify-center items-center h-full">
+      <div class="flex flex-col gap-2">
+        <h1 class="text-6xl">Hola, soy <span class="text-red-500">Joseph Martínez</span></h1>
+        <p class="text-2xl text-left text-red-300">Desarrollador Web</p>
+        <ol class="flex gap-2 flex-wrap">
+          <SocialLink href="https://github.com/JooFeBF"><GithubIcon />GitHub</SocialLink>
+          <SocialLink href="mailto:joofemm@gmail.com"><MailIcon />Enviame un correo</SocialLink>
+        </ol>
+      </div>
+    </div>
+  </SectionContainer>
+  <SectionContainer class="max-w-6xl mx-auto" id="Projects">
+    <Projects />
+  </SectionContainer>
+</Layout>
+

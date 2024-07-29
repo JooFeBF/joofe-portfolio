@@ -1,0 +1,121 @@
+---
+import CodeIcon from './icons/CodeIcon.astro'
+import GithubIcon from './icons/GithubIcon.astro'
+import ReactIcon from './icons/ReactIcon.astro'
+import ReduxIcon from './icons/ReduxIcon.astro'
+import TailwindIcon from './icons/TailwindIcon.astro'
+import CssIcon from './icons/CssIcon.astro'
+import NodeJSIcon from './icons/NodeJSIcon.astro'
+
+const CinemaAppImage = 'project-cinema-app.webp'
+const NewsAppImage = 'project-bootcamp-news.webp'
+const AssemblerImage = 'project-assembler-js.webp'
+const E4KImage = 'project-e4k.webp'
+const E4KAppImage = 'project-ef4-app.webp'
+
+const TAGS = {
+  REACT: {
+    name: 'React',
+    color: 'bg-blue-500',
+    icon: ReactIcon,
+  },
+  REDUX: {
+    name: 'Redux',
+    color: 'bg-purple-500',
+    icon: ReduxIcon,
+  },
+  TAILWIND: {
+    name: 'Tailwind',
+    color: 'bg-blue-300',
+    icon: TailwindIcon,
+  },
+  CSS: {
+    name: 'CSS',
+    color: 'bg-blue-700',
+    icon: CssIcon,
+  },
+  NODEJS: {
+    name: 'NodeJS',
+    color: 'bg-green-500',
+    icon: NodeJSIcon,
+  }
+}
+
+const PROJECTS = [
+  {
+    title: 'Cinema App',
+    image: CinemaAppImage,
+    description: 'Aplicación web para buscar películas y series de TV.',
+    github: 'https://github.com/JooFeBF/Cinema-App',
+    link: 'https://cinema-app-lake.vercel.app/',
+    tags: [TAGS.REACT, TAGS.CSS]
+  },
+  {
+    title: 'News App',
+    image: NewsAppImage,
+    description: 'Aplicación web para buscar noticias.',
+    github: 'https://github.com/Gurottesque/News-App',
+    link: 'https://bootcamp-news.netlify.app',
+    tags: [TAGS.REACT, TAGS.REDUX, TAGS.TAILWIND]
+  },
+  {
+    title: 'Assembler JS',
+    image: AssemblerImage,
+    description: 'Compilador de RISC-V a lenguaje de máquina.',
+    github: 'https://github.com/JooFeBF/assembler-js',
+    tags: [TAGS.NODEJS]
+  },
+  {
+    title: 'English 4 Kids',
+    image: E4KImage,
+    description: 'Sitio web para la app English 4 Kids.',
+    github: 'https://github.com/JooFeBF/english-4-kids',
+    link: 'https://english-4-kids.vercel.app/',
+    tags: [TAGS.CSS]
+  },
+  {
+    title: 'English 4 Kids App',
+    image: E4KAppImage,
+    description: 'Aplicación para niños para aprender inglés.',
+    github: 'https://github.com/JooFeBF/english4kids-app',
+    link: 'https://english4kids-app.vercel.app/',
+    tags: [TAGS.REACT, TAGS.CSS]
+  }
+]
+---
+<div class="flex flex-row w-full gap-2">
+ <CodeIcon />
+ <h2 class="font-bold">Proyectos</h2>
+</div>
+<ul class="flex flex-row flex-wrap justify-center">
+  {PROJECTS.map((project) => (
+    <li class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4">
+      <div class="bg-red-900 rounded-lg shadow-lg">
+        <img src={project.image} alt={project.title} class="w-full h-48 object-cover rounded-t-lg" />
+        <div class="p-4">
+          <h3 class="font-bold text-lg">{project.title}</h3>
+          <p class="text-gray-300">{project.description}</p>
+          <div class="flex flex-row flex-wrap gap-2 mt-2">
+            {project.tags.map((tag) => (
+              <span class={`flex flex-row items-center gap-2 px-3 py-1 rounded-full text-white ${tag.color}`}>
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            ))}
+          </div>
+          <div class="flex flex-row gap-2 mt-2">
+            <a href={project.github} target="_blank" rel="noopener noreferrer" class="flex flex-row items-center px-2 py-1 rounded-lg bg-gray-800 text-white">
+              <GithubIcon />
+              Código
+            </a>
+            {project.link && (
+              <a href={project.link} target="_blank" rel="noopener noreferrer" class="flex flex-row items-center px-2 py-1 rounded-lg bg-blue-500 text-white">
+                <CodeIcon />
+                Ver
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </li>
+  ))}
