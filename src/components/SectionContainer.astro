@@ -2,6 +2,6 @@
   const classProp = Astro.props.class;
 ---
 
-<section class=`min-h-vh flex flex-col justify-center items-center px-4 ${classProp ? classProp : ''}` {...Astro.props}>
+<section class=`min-h-screen flex flex-col justify-center items-center px-4 ${classProp ? classProp : ''}` {...Astro.props}>
   <slot />
 </section>
